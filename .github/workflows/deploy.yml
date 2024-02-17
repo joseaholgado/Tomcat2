@@ -27,5 +27,5 @@ jobs:
             aws deploy create-deployment \
               --application-name ApiDeploy
               --deployment-group-name GrupoDeploy \
-              --github-location repository=~${{github.repository}},commitId=${{github.sha}} \
+              --github-location repository=${{github.repository}},commitId=${{github.sha}} \
               --description "Deployed from GitHub"
