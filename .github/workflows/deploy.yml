@@ -27,7 +27,7 @@ jobs:
             aws cloudformation deploy \
             --profile default \
             --stack-name PilaDeploy \
-            --template-file ubuntu.yml
+            --template-file ubuntu.yml && \
             aws deploy create-deployment \
               --application-name ApiDeploy \
               --deployment-group-name GrupoDeploy \
