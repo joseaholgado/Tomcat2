@@ -24,7 +24,10 @@ jobs:
 
       - name: Deploy to AWS
         run: |
-            aws cloudformation deploy --profile default --stack-name PilaDeploy --template-file ubuntu.yml
+            aws cloudformation deploy \
+            --profile default \
+            --stack-name PilaDeploy \
+            --template-file ubuntu.yml
             aws deploy create-deployment \
               --application-name ApiDeploy \
               --deployment-group-name GrupoDeploy \
