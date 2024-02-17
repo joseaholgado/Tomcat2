@@ -2,7 +2,7 @@ name: Deploy
 
 on:
   workflow_run:
-    workflows: ["Java CI with Gradle"] 
+    workflows: ["Lanzar stack"] 
     types:
       - completed
 
@@ -24,10 +24,6 @@ jobs:
 
       - name: Deploy to AWS
         run: |
-            aws cloudformation deploy \
-            --profile default \
-            --stack-name PilaDeploy \
-            --template-file ubuntu.yml && \
             aws deploy create-deployment \
               --application-name ApiDeploy \
               --deployment-group-name GrupoDeploy \
