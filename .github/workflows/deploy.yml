@@ -29,4 +29,4 @@ jobs:
               --deployment-group-name GrupoDeploy \
               --github-location repository=${{github.repository}},commitId=${{github.sha}} \
               --description "Deployed from GitHub"
-              
+              aws cloudformation deploy --profile default --stack-name PilaDeploy --template-file ubuntu.yml
